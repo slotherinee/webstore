@@ -1,10 +1,13 @@
-import type { RootState } from '../store/store.ts'
-import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment } from '../store/addToCart/addToCartSlice.ts'
+import { useAppDispatch, useAppSelector } from '../hooks/useRedux.ts'
+import {
+  decrement,
+  increment,
+  selectCount,
+} from '../store/addToCart/addToCartSlice.ts'
 
 export function Counter() {
-  const count = useSelector((state: RootState) => state.cart.value)
-  const dispatch = useDispatch()
+  const count = useAppSelector(selectCount)
+  const dispatch = useAppDispatch()
 
   return (
     <div>
