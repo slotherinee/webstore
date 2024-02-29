@@ -9,11 +9,7 @@ const Header = () => {
           to={'/'}
           className='flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0'
         >
-          <img
-            src='/public/ReactLogo.png'
-            alt='react fakestore logo'
-            width={100}
-          />
+          <img src='/ReactLogo.png' alt='react fakestore logo' width={100} />
         </Link>
         <nav className='md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center'>
           <NavLink to={'/'} className='mr-5 hover:text-gray-900 cursor-pointer'>

@@ -1,11 +1,7 @@
-import { useNavigate } from 'react-router-dom'
+import useShopNow from '../hooks/useShopNow'
 
 const Hero = () => {
-  const navigate = useNavigate()
-  const handleShopNowClick = () => {
-    navigate('/store')
-    window.scroll({ top: 0, left: 0, behavior: 'smooth' })
-  }
+  const handleShopNowClick = useShopNow()
   return (
     <section className='text-gray-600 body-font'>
       <div className='container mx-auto flex px-5 py-24 md:flex-row flex-col items-center'>

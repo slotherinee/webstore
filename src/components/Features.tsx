@@ -1,21 +1,26 @@
+import useShopNow from '../hooks/useShopNow'
+
 const Features = () => {
+  const handleShopNowClick = useShopNow()
   return (
     <section id='features' className='text-gray-600 body-font'>
       <div className='container px-5 py-24 mx-auto'>
         <div className='text-center mb-20'>
           <h1 className='sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4'>
-            Raw Denim Heirloom Man Braid
+            Our Unique Features
           </h1>
           <p className='text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto'>
-            Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-            taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi
-            pug.
+            Discover the latest trends in fashion with our wide selection of
+            clothing and accessories. From everyday essentials to exclusive
+            designer pieces, our collection is carefully curated to bring you
+            the best of style and comfort. Shop with us and elevate your
+            wardrobe with our high-quality, fashionable items.
           </p>
         </div>
         <div className='flex flex-wrap -m-4'>
           <div className='p-4 lg:w-1/4 sm:w-1/2 w-full'>
             <h2 className='font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left'>
-              SHOOTING STARS
+              Our Collections
             </h2>
             <nav className='flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5'>
               <a>
@@ -32,7 +37,7 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                First Link
+                Women's Clothing
               </a>
               <a>
                 <span className='bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center'>
@@ -48,7 +53,7 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                Second Link
+                Men's Clothing
               </a>
               <a>
                 <span className='bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center'>
@@ -64,7 +69,7 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                Third Link
+                Accessories
               </a>
               <a>
                 <span className='bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center'>
@@ -80,7 +85,7 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                Fourth Link
+                New Arrivals
               </a>
               <a>
                 <span className='bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center'>
@@ -96,13 +101,13 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                Fifth Link
+                Sale
               </a>
             </nav>
           </div>
           <div className='p-4 lg:w-1/4 sm:w-1/2 w-full'>
             <h2 className='font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left'>
-              THE 400 BLOWS
+              Customer Service
             </h2>
             <nav className='flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5'>
               <a>
@@ -119,7 +124,7 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                First Link
+                24/7 Support
               </a>
               <a>
                 <span className='bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center'>
@@ -135,7 +140,7 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                Second Link
+                Shipping Information
               </a>
               <a>
                 <span className='bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center'>
@@ -151,7 +156,7 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                Third Link
+                Returns & Exchanges
               </a>
               <a>
                 <span className='bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center'>
@@ -167,7 +172,7 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                Fourth Link
+                FAQs
               </a>
               <a>
                 <span className='bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center'>
@@ -183,13 +188,13 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                Fifth Link
+                Customer service
               </a>
             </nav>
           </div>
           <div className='p-4 lg:w-1/4 sm:w-1/2 w-full'>
             <h2 className='font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left'>
-              THE CATALYZER
+              Shopping With Us
             </h2>
             <nav className='flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5'>
               <a>
@@ -206,7 +211,7 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                First Link
+                Secure Payment
               </a>
               <a>
                 <span className='bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center'>
@@ -222,7 +227,7 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                Second Link
+                Track Your Order
               </a>
               <a>
                 <span className='bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center'>
@@ -238,7 +243,7 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                Third Link
+                Gift Cards
               </a>
               <a>
                 <span className='bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center'>
@@ -254,7 +259,7 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                Fourth Link
+                Size Guide
               </a>
               <a>
                 <span className='bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center'>
@@ -270,13 +275,13 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                Fifth Link
+                Wishlist
               </a>
             </nav>
           </div>
           <div className='p-4 lg:w-1/4 sm:w-1/2 w-full'>
             <h2 className='font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left'>
-              NEPTUNE
+              Our Policies"
             </h2>
             <nav className='flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5'>
               <a>
@@ -293,7 +298,7 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                First Link
+                Shopping Policy
               </a>
               <a>
                 <span className='bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center'>
@@ -309,7 +314,7 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                Second Link
+                Buying Policy
               </a>
               <a>
                 <span className='bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center'>
@@ -325,7 +330,7 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                Third Link
+                Shipping Policy
               </a>
               <a>
                 <span className='bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center'>
@@ -341,7 +346,7 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                Fourth Link
+                Selling Policy
               </a>
               <a>
                 <span className='bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center'>
@@ -357,13 +362,16 @@ const Features = () => {
                     <path d='M20 6L9 17l-5-5'></path>
                   </svg>
                 </span>
-                Fifth Link
+                Measurement Guide
               </a>
             </nav>
           </div>
         </div>
-        <button className='flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg'>
-          Button
+        <button
+          onClick={handleShopNowClick}
+          className='flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg'
+        >
+          Shop now
         </button>
       </div>
     </section>
