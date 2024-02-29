@@ -9,7 +9,7 @@ const Products = () => {
   if (error) return <h1>{(error as FetchBaseQueryError).status}</h1>
   return (
     <section className='text-gray-600 body-font'>
-      <div className='container px-5 py-24 mx-auto'>
+      <div className='container py-24 mx-auto'>
         <div className='flex flex-wrap -m-4'>
           {isLoading ? (
             <Spinner />
