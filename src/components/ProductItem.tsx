@@ -1,12 +1,6 @@
+import { Product } from '../types/productTypes'
 type ProductItemProps = {
-  data: {
-    id: number
-    title: string
-    price: number
-    category: string
-    description: string
-    image: string
-  }
+  data: Product
 }
 
 const ProductItem = ({ data }: ProductItemProps) => {

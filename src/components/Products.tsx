@@ -2,15 +2,7 @@ import { FetchBaseQueryError } from '@reduxjs/toolkit/query'
 import { useGetProductsQuery } from '../store/services/products'
 import ProductItem from './ProductItem'
 import Spinner from './ui/Spinner'
-
-type Product = {
-  id: number
-  title: string
-  price: number
-  category: string
-  description: string
-  image: string
-}
+import { Product } from '../types/productTypes'
 
 const Products = () => {
   const { data, error, isLoading } = useGetProductsQuery({})
