@@ -5,27 +5,27 @@ const Statistics = () => {
         <div className='flex flex-wrap -m-4 text-center'>
           <div className='p-4 sm:w-1/4 w-1/2'>
             <h2 className='title-font font-medium sm:text-4xl text-3xl text-gray-900'>
-              2.7K
+              100K
             </h2>
-            <p className='leading-relaxed'>Users</p>
+            <p className='leading-relaxed'>Customers</p>
           </div>
           <div className='p-4 sm:w-1/4 w-1/2'>
             <h2 className='title-font font-medium sm:text-4xl text-3xl text-gray-900'>
-              1.8K
+              1K
             </h2>
-            <p className='leading-relaxed'>Subscribes</p>
+            <p className='leading-relaxed'>Fashion Brands</p>
           </div>
           <div className='p-4 sm:w-1/4 w-1/2'>
             <h2 className='title-font font-medium sm:text-4xl text-3xl text-gray-900'>
-              35
+              20K
             </h2>
-            <p className='leading-relaxed'>Downloads</p>
+            <p className='leading-relaxed'>Items Sold</p>
           </div>
           <div className='p-4 sm:w-1/4 w-1/2'>
             <h2 className='title-font font-medium sm:text-4xl text-3xl text-gray-900'>
-              4
+              1M
             </h2>
-            <p className='leading-relaxed'>Products</p>
+            <p className='leading-relaxed'>Website Visits</p>
           </div>
         </div>
       </div>

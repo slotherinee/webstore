@@ -7,7 +7,10 @@ export const fakeStoreApi = createApi({
     getProducts: builder.query({
       query: () => `products`,
     }),
+    getFirstSixProducts: builder.query({
+      query: () => `products?limit=6`,
+    }),
   }),
 })
 
-export const { useGetProductsQuery } = fakeStoreApi
+export const { useGetProductsQuery, useGetFirstSixProductsQuery } = fakeStoreApi
