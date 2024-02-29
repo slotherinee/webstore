@@ -3,8 +3,8 @@ import useShopNow from '../hooks/useShopNow'
 const Features = () => {
   const handleShopNowClick = useShopNow()
   return (
-    <section id='features' className='text-gray-600 body-font'>
-      <div className='container px-5 py-24 mx-auto'>
+    <section id='features' className='text-gray-600 body-font bg-gray-100'>
+      <div className='container px-5 py-20 mx-auto'>
         <div className='text-center mb-20'>
           <h1 className='sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4'>
             Our Unique Features
