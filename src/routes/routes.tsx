@@ -12,7 +12,10 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { path: '/', element: <MainPage /> },
-      { path: '/store', element: <StorePage /> },
+      {
+        path: '/store',
+        element: <StorePage />,
+      },
       { path: '/cart', element: <CartPage /> },
       { path: 'store/items/:id', element: <SingleItemPage /> },
     ],

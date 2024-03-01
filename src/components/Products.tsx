@@ -5,16 +5,17 @@ import Spinner from './ui/Spinner'
 import { Product } from '../types/productTypes'
 
 const Products = () => {
-  const { data, error, isLoading } = useGetProductsQuery({})
+  const { data: products, error, isLoading } = useGetProductsQuery({})
+
   if (error) return <h1>{(error as FetchBaseQueryError).status}</h1>
   return (
-    <section className='text-gray-600 body-font'>
-      <div className='container py-24 mx-auto'>
-        <div className='flex flex-wrap -m-4'>
+    <section className='flex justify-center  text-gray-600 body-font'>
+      <div className='container py-24 '>
+        <div className='flex flex-wrap justify-evenly'>
           {isLoading ? (
             <Spinner />
           ) : (
-            data?.map((product: Product) => (
+            products?.map((product: Product) => (
               <ProductItem key={product.id} data={product} />
             ))
           )}

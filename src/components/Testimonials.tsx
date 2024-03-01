@@ -6,7 +6,7 @@ const Testimonials = () => {
       <div className='container px-5 py-24 mx-auto'>
         <div className='flex flex-wrap -m-4'>
           {testimonialsData.map(({ name, role, image, content = '' }) => (
-            <div className='lg:w-1/3 lg:mb-0 mb-6 p-4'>
+            <div key={name} className='lg:w-1/3 lg:mb-0 mb-6 p-4'>
               <div className='h-full flex flex-col justify-between items-center text-center'>
                 <div>
                   <img

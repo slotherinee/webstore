@@ -1,36 +1,57 @@
-const Statistics = () => {
+export default function Statistics() {
+  const stats = [
+    {
+      data: '100K',
+      title: 'Customers',
+    },
+    {
+      data: '1K+',
+      title: 'Fashion Brands',
+    },
+    {
+      data: '400K',
+      title: 'Items Sold',
+    },
+    {
+      data: '1M+',
+      title: 'Website Visits',
+    },
+  ]
+
   return (
-    <section className='text-gray-600 body-font bg-gray-100'>
-      <div className='container px-5 py-20 mx-auto'>
-        <div className='flex flex-wrap -m-4 text-center'>
-          <div className='p-4 sm:w-1/4 w-1/2'>
-            <h2 className='title-font font-medium sm:text-4xl text-3xl text-gray-900'>
-              100K
-            </h2>
-            <p className='leading-relaxed'>Customers</p>
+    <section className='py-14'>
+      <div className='max-w-screen-xl mx-auto px-4 text-gray-600 gap-x-12 items-start justify-between lg:flex md:px-8'>
+        <div className='sm:hidden lg:block lg:max-w-xl'>
+          <img
+            src='https://images.unsplash.com/photo-1622675363311-3e1904dc1885?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
+            className='rounded-lg'
+            alt=''
+          />
+        </div>
+        <div className='mt-6 gap-12 sm:mt-0 md:flex lg:block'>
+          <div className='max-w-2xl'>
+            <h3 className='text-gray-800 text-3xl font-semibold sm:text-4xl'>
+              We do our best to make customers always happy
+            </h3>
+            <p className='mt-3 max-w-xl'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+              venenatis sollicitudin quam ut tincidunt.
+            </p>
           </div>
-          <div className='p-4 sm:w-1/4 w-1/2'>
-            <h2 className='title-font font-medium sm:text-4xl text-3xl text-gray-900'>
-              1K
-            </h2>
-            <p className='leading-relaxed'>Fashion Brands</p>
-          </div>
-          <div className='p-4 sm:w-1/4 w-1/2'>
-            <h2 className='title-font font-medium sm:text-4xl text-3xl text-gray-900'>
-              20K
-            </h2>
-            <p className='leading-relaxed'>Items Sold</p>
-          </div>
-          <div className='p-4 sm:w-1/4 w-1/2'>
-            <h2 className='title-font font-medium sm:text-4xl text-3xl text-gray-900'>
-              1M
-            </h2>
-            <p className='leading-relaxed'>Website Visits</p>
+          <div className='flex-none mt-6 md:mt-0 lg:mt-6'>
+            <ul className='inline-grid gap-y-8 gap-x-14 grid-cols-2'>
+              {stats.map((item, idx) => (
+                <li key={idx} className=''>
+                  <h4 className='text-4xl text-indigo-600 font-semibold'>
+                    {item.data}
+                  </h4>
+                  <p className='mt-3 font-medium'>{item.title}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
     </section>
   )
 }
-
-export default Statistics

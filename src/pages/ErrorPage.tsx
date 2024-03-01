@@ -6,6 +6,13 @@ export default function ErrorPage() {
 
   return (
     <div className='flex flex-col items-center justify-center h-screen'>
+      <Link to={'/'}>
+        <img
+          src='/ReactLogo.png'
+          width={100}
+          className='absolute top-0 left-0 m-5'
+        />
+      </Link>
       <h1 className='text-3xl mb-5'>Oops!</h1>
       <p className='text-xl'>
         Sorry, an unexpected error has occurred. Page not found.
