@@ -1,5 +1,8 @@
 import { renderStars } from '../../utils/renderStars'
 import type { Product } from '../../types/productTypes'
+import { useAppDispatch } from '@/hooks/useRedux'
+import { addToCart } from '@/store/cart/cartSlice'
+import { v4 as uuidv4 } from 'uuid'
 import { Button } from '../ui/button'
 
 type ProductItemProps = {
@@ -7,6 +10,7 @@ type ProductItemProps = {
 }
 
 const ProductItem = ({ data }: ProductItemProps) => {
+  const dispatch = useAppDispatch()
   return (
     <div className='relative m-8 flex justify-between w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md'>
       <a className='flex justify-center relative mx-3 mt-3 h-60 overflow-hidden rounded-xl'>
@@ -37,7 +41,10 @@ const ProductItem = ({ data }: ProductItemProps) => {
             </span>
           </div>
         </div>
-        <Button className='flex items-center w-full active:scale-95'>
+        <Button
+          onClick={() => dispatch(addToCart({ ...data, itemId: uuidv4() }))}
+          className='flex items-center w-full active:scale-95'
+        >
           <svg
             xmlns='http://www.w3.org/2000/svg'
             className='mr-2 h-6 w-6'
@@ -54,7 +61,6 @@ const ProductItem = ({ data }: ProductItemProps) => {
           </svg>
           Add to cart
         </Button>
-        {/* </a> */}
       </div>
     </div>
   )

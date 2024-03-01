@@ -1,8 +1,8 @@
-import Cart from '../components/Cart'
+import Cart from '../components/Cart/Cart'
 
 const CartPage = () => {
   return (
-    <section>
+    <section className='flex-1'>
       <Cart />
     </section>
   )

@@ -14,8 +14,8 @@ const Footer = () => {
   }
   return (
     <>
-      <hr className='border-gray-200' />
       <footer className='text-gray-600 body-font '>
+        <hr className='border-gray-200' />
         <div className='container px-5 py-4 mx-auto flex items-center justify-between sm:flex-row flex-col'>
           <Link
             to={'/'}
