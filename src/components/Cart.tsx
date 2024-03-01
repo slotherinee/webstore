@@ -124,7 +124,7 @@ const Cart = () => {
               <p className='text-sm text-gray-700'>including VAT</p>
             </div>
           </div>
-          <Button className='w-full mt-6'>Check out</Button>
+          <Button className='w-full mt-6 active:scale-95'>Check out</Button>
         </div>
       </div>
     </div>

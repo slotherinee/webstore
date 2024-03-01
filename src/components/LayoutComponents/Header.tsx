@@ -1,8 +1,10 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Link as ScrollLink } from 'react-scroll'
-import { Button, buttonVariants } from '../ui/button'
+import { Button } from '../ui/button'
+import { MoveRight } from 'lucide-react'
 
 const Header = () => {
+  const location = useLocation()
   return (
     <header className='text-gray-600 body-font'>
       <div className='container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center'>
@@ -41,26 +43,29 @@ const Header = () => {
             Testimonials
           </ScrollLink>
         </nav>
-        <NavLink to={'/store'}>
-          <Button
-            variant='outline'
-            size='sm'
-            className='hover:text-white hover:bg-slate-900'
-          >
-            Store
-            <svg
-              fill='none'
-              stroke='currentColor'
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth='2'
-              className='w-4 h-4 ml-1'
-              viewBox='0 0 24 24'
+        {location.pathname === '/store' ? (
+          <Link to={'/cart'}>
+            <Button
+              variant='outline'
+              size='sm'
+              className='hover:text-white hover:bg-slate-900 px-6 active:scale-95'
             >
-              <path d='M5 12h14M12 5l7 7-7 7'></path>
-            </svg>
-          </Button>
-        </NavLink>
+              Cart
+              <MoveRight className='ml-3' strokeWidth={1} size={20} />
+            </Button>
+          </Link>
+        ) : (
+          <Link to={'/store'}>
+            <Button
+              variant='outline'
+              size='sm'
+              className='hover:text-white hover:bg-slate-900 px-5 active:scale-95'
+            >
+              Store
+              <MoveRight className='ml-3' strokeWidth={1} size={20} />
+            </Button>
+          </Link>
+        )}
       </div>
     </header>
   )
