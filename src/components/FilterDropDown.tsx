@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -7,12 +6,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { useState } from 'react'
+import { Button } from '@/components/ui/button'
 
-function FilterDropDown() {
-  const [filterName, setFilterName] = useState<'Newest' | 'Oldest' | 'Price'>(
-    'Newest'
-  )
+type FilterDropDownProps = {
+  filterName: 'Newest' | 'Oldest' | 'Price'
+  setFilterName: (filter: 'Newest' | 'Oldest' | 'Price') => void
+}
+
+function FilterDropDown({ filterName, setFilterName }: FilterDropDownProps) {
   const filters = ['Newest', 'Oldest', 'Price']
 
   return (
@@ -28,6 +29,9 @@ function FilterDropDown() {
         {filters.map(filter => (
           <DropdownMenuCheckboxItem
             key={filter}
+            onClick={() =>
+              setFilterName(filter as 'Newest' | 'Oldest' | 'Price')
+            }
             checked={filterName === filter}
             onCheckedChange={checked =>
               checked && setFilterName(filter as 'Newest' | 'Oldest' | 'Price')

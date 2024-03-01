@@ -4,8 +4,12 @@ import ProductItem from './ProductItem'
 import Spinner from '../ui/Spinner'
 import { Product } from '../../types/productTypes'
 
-const Products = () => {
-  const { data: products, error, isLoading } = useGetProductsQuery({})
+type ProductsProps = {
+  filteredProducts: Product[]
+}
+
+const Products = ({ filteredProducts }: ProductsProps) => {
+  const { error, isLoading } = useGetProductsQuery({})
 
   if (error) return <h1>{(error as FetchBaseQueryError).status}</h1>
   return (
@@ -15,7 +19,7 @@ const Products = () => {
           {isLoading ? (
             <Spinner />
           ) : (
-            products?.map((product: Product) => (
+            filteredProducts?.map((product: Product) => (
               <ProductItem key={product.id} data={product} />
             ))
           )}
