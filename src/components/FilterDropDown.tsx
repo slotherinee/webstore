@@ -18,8 +18,12 @@ function FilterDropDown({ filterName, setFilterName }: FilterDropDownProps) {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button size='sm' variant='link'>
+      <DropdownMenuTrigger className='place-self-start ml-20' asChild>
+        <Button
+          size='sm'
+          variant='link'
+          className='focus-visible:ring-0 focus-visible:ring-ring focus-visible:ring-offset-0'
+        >
           {filterName}
         </Button>
       </DropdownMenuTrigger>

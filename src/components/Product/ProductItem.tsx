@@ -8,7 +8,7 @@ type ProductItemProps = {
 
 const ProductItem = ({ data }: ProductItemProps) => {
   return (
-    <div className='relative m-10 flex justify-between w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md'>
+    <div className='relative m-8 flex justify-between w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md'>
       <a className='flex justify-center relative mx-3 mt-3 h-60 overflow-hidden rounded-xl'>
         <img className='object-contain' src={data.image} alt={data.title} />
         <span className='absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white'>
@@ -37,10 +37,6 @@ const ProductItem = ({ data }: ProductItemProps) => {
             </span>
           </div>
         </div>
-        {/* <a
-          href='#'
-          className='flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300'
-        > */}
         <Button className='flex items-center w-full active:scale-95'>
           <svg
             xmlns='http://www.w3.org/2000/svg'

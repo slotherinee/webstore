@@ -29,7 +29,7 @@ const StorePage = () => {
     }
   }, [filterName, products, isLoading])
   return (
-    <section>
+    <section className='flex flex-col relative'>
       <FilterDropDown filterName={filterName} setFilterName={setFilterName} />
       <Products filteredProducts={filteredProducts} />
     </section>

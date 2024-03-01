@@ -13,9 +13,9 @@ const Products = ({ filteredProducts }: ProductsProps) => {
 
   if (error) return <h1>{(error as FetchBaseQueryError).status}</h1>
   return (
-    <section className='flex justify-center  text-gray-600 body-font'>
-      <div className='container py-20 '>
-        <div className='flex flex-wrap justify-evenly'>
+    <section className='text-gray-600 body-font'>
+      <div className='container py-20'>
+        <div className='flex flex-wrap justify-center'>
           {isLoading ? (
             <Spinner />
           ) : (
