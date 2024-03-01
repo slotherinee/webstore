@@ -1,5 +1,6 @@
-import { renderStars } from '../utils/renderStars'
-import type { Product } from '../types/productTypes'
+import { renderStars } from '../../utils/renderStars'
+import type { Product } from '../../types/productTypes'
+import { Button } from '../ui/button'
 
 type ProductItemProps = {
   data: Product
@@ -36,10 +37,11 @@ const ProductItem = ({ data }: ProductItemProps) => {
             </span>
           </div>
         </div>
-        <a
+        {/* <a
           href='#'
           className='flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300'
-        >
+        > */}
+        <Button className='flex items-center w-full active:scale-95'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             className='mr-2 h-6 w-6'
@@ -55,7 +57,8 @@ const ProductItem = ({ data }: ProductItemProps) => {
             />
           </svg>
           Add to cart
-        </a>
+        </Button>
+        {/* </a> */}
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
-import { useGetFirstSixProductsQuery } from '../store/services/products'
-import type { Product } from '../types/productTypes'
+import { useGetFirstSixProductsQuery } from '../../store/services/products'
+import type { Product } from '../../types/productTypes'
 import GalleryItem from './GalleryItem'
-import Spinner from './ui/Spinner'
+import Spinner from '../ui/Spinner'
 
 const Gallery = () => {
   const { data, isLoading, error } = useGetFirstSixProductsQuery({})

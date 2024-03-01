@@ -1,8 +1,8 @@
-import Gallery from '../components/Gallery'
-import Hero from '../components/Hero'
-import Statistics from '../components/Statistics'
-import Testimonials from '../components/Testimonials'
-import Features from '../components/Features'
+import Gallery from '../components/Gallery/Gallery'
+import Hero from '../components/MainPageComponents/Hero'
+import Statistics from '../components/MainPageComponents/Statistics'
+import Testimonials from '../components/MainPageComponents/Testimonials'
+import Features from '../components/MainPageComponents/Features'
 
 const MainPage = () => {
   return (

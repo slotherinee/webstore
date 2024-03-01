@@ -1,3 +1,5 @@
+import { Button } from '@/components/ui/button'
+
 const Cart = () => {
   return (
     <div className='h-screen bg-gray-100 pt-20'>
@@ -122,9 +124,7 @@ const Cart = () => {
               <p className='text-sm text-gray-700'>including VAT</p>
             </div>
           </div>
-          <button className='mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600'>
-            Check out
-          </button>
+          <Button className='w-full mt-6'>Check out</Button>
         </div>
       </div>
     </div>
