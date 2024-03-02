@@ -25,7 +25,7 @@ const Cart = () => {
           ) : (
             <div className='flex flex-col justify-center items-center'>
               <img src='/nocart.png' alt='no cart items' />
-              <Button asChild>
+              <Button className='mt-20 active:scale-95' asChild>
                 <Link to={'/store'}>Go back to shopping</Link>
               </Button>
             </div>
