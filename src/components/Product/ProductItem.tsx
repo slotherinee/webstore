@@ -30,11 +30,14 @@ const ProductItem = ({ data }: ProductItemProps) => {
           </p>
           <div className='flex items-center'>
             <p className='text-lg font-semibold text-black cursor-auto my-3'>
-              ${data.price}
+              ${data.price.toFixed(2)}
             </p>
             <del>
               <p className='text-sm text-gray-600 cursor-auto ml-2'>
-                ${data.price + Math.floor(Math.random() * 100 + 100)}
+                $
+                {(data.price + Math.floor(Math.random() * 100 + 100)).toFixed(
+                  2
+                )}
               </p>
             </del>
             <div className='ml-auto'>
