@@ -4,7 +4,7 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import type { Product } from '../../types/productTypes'
 
 const initialState = {
-  items: <Product[]>[],
+  items: [] as Product[],
 }
 
 export const cartSlice = createSlice({
@@ -22,16 +22,16 @@ export const cartSlice = createSlice({
         state.items.push({ ...action.payload, quantity: 1 })
       }
     },
-    removeFromCart: (state, action: PayloadAction<string>) => {
+    removeFromCart: (state, action: PayloadAction<number>) => {
       state.items = state.items.filter(item => item.id !== action.payload)
     },
-    increaseQuantity: (state, action: PayloadAction<string>) => {
+    increaseQuantity: (state, action: PayloadAction<number>) => {
       const item = state.items.find(item => item.id === action.payload)
       if (item) {
         item.quantity = (item.quantity || 0) + 1
       }
     },
-    decreaseQuantity: (state, action: PayloadAction<string>) => {
+    decreaseQuantity: (state, action: PayloadAction<number>) => {
       const item = state.items.find(item => item.id === action.payload)
       if (item) {
         item.quantity = (item.quantity || 0) - 1

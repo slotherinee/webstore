@@ -1,5 +1,9 @@
 import { useAppDispatch } from '@/hooks/useRedux'
-import { removeFromCart } from '@/store/cart/cartSlice'
+import {
+  decreaseQuantity,
+  increaseQuantity,
+  removeFromCart,
+} from '@/store/cart/cartSlice'
 import { Product } from '@/types/productTypes'
 
 type CartItemProps = {
@@ -22,30 +26,36 @@ const CartItem = ({ data }: CartItemProps) => {
         </div>
         <div className='mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6'>
           <div className='flex items-center border-gray-100'>
-            <span className='cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-slate-900 hover:text-blue-50'>
-              {' '}
-              -{' '}
-            </span>
+            <button onClick={() => dispatch(decreaseQuantity(data.id))}>
+              <span className='cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-slate-900 hover:text-blue-50'>
+                {' '}
+                -{' '}
+              </span>
+            </button>
             <input
               className='h-8 w-8 border bg-white text-center text-xs outline-none'
               type='number'
-              value='2'
+              value={data.quantity}
               min='1'
             />
-            <span className='cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-slate-900 hover:text-blue-50'>
-              {' '}
-              +{' '}
-            </span>
+            <button onClick={() => dispatch(increaseQuantity(data.id))}>
+              <span className='cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-slate-900 hover:text-blue-50'>
+                {' '}
+                +{' '}
+              </span>
+            </button>
           </div>
           <div className='flex items-center space-x-4'>
-            <p className='text-sm'>{data.price}</p>
+            <p className='text-sm'>
+              ${(data.price * (data.quantity ?? 0)).toFixed(2)}
+            </p>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
               viewBox='0 0 24 24'
               strokeWidth='1.5'
               stroke='currentColor'
-              onClick={() => dispatch(removeFromCart(data))}
+              onClick={() => dispatch(removeFromCart(data.id))}
               className='h-5 w-5 cursor-pointer duration-150 hover:text-gray-500'
             >
               <path

@@ -13,7 +13,7 @@ const ProductItem = ({ data }: ProductItemProps) => {
   const dispatch = useAppDispatch()
   return (
     <div className='w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl'>
-      <a>
+      <div>
         <Link to={`/store/items/${data.id}`}>
           <img
             src={data.image}
@@ -33,7 +33,9 @@ const ProductItem = ({ data }: ProductItemProps) => {
               ${data.price}
             </p>
             <del>
-              <p className='text-sm text-gray-600 cursor-auto ml-2'>$199</p>
+              <p className='text-sm text-gray-600 cursor-auto ml-2'>
+                ${data.price + Math.floor(Math.random() * 100 + 100)}
+              </p>
             </del>
             <div className='ml-auto'>
               <div
@@ -51,7 +53,7 @@ const ProductItem = ({ data }: ProductItemProps) => {
             </div>
           </div>
         </div>
-      </a>
+      </div>
     </div>
   )
 }
