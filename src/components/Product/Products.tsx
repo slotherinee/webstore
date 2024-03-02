@@ -3,6 +3,7 @@ import { useGetProductsQuery } from '../../store/services/products'
 import ProductItem from './ProductItem'
 import Spinner from '../ui/Spinner'
 import { Product } from '../../types/productTypes'
+import { Link } from 'react-router-dom'
 
 type ProductsProps = {
   filteredProducts: Product[]
@@ -20,7 +21,9 @@ const Products = ({ filteredProducts }: ProductsProps) => {
             <Spinner />
           ) : (
             filteredProducts?.map((product: Product) => (
-              <ProductItem key={product.id} data={product} />
+              <Link to={`/store/items/${product.id}`}>
+                <ProductItem key={product.id} data={product} />
+              </Link>
             ))
           )}
         </div>
