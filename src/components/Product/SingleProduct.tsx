@@ -42,7 +42,7 @@ const SingleProduct = () => {
                   </span>
                 </span>
               </div>
-              <p className='leading-relaxed'>{product?.description}</p>
+              <p className='leading-relaxed mb-5'>{product?.description}</p>
 
               <div className='flex'>
                 <span className='title-font font-medium text-2xl text-gray-900'>

@@ -4,21 +4,19 @@ import { selectCartItems, selectTotalCost } from '@/store/cart/cartSlice'
 import CartItem from './CartItem'
 import { Product } from '@/types/productTypes'
 import { Link } from 'react-router-dom'
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 
 const Cart = () => {
+  const [parent] = useAutoAnimate({
+    duration: 500,
+  })
   const totalPrice = useAppSelector(selectTotalCost)
   const cartItems = useAppSelector(selectCartItems)
   return (
     <div className='min-h-screen bg-gray-100 pt-20'>
-      <div className='mb-10 text-center text-2xl font-bold'>
-        {!!cartItems.length ? (
-          'Cart Items'
-        ) : (
-          <h3 className='font-light text-5xl text-gray-400'>Cart is empty</h3>
-        )}
-      </div>
+      <div className='mb-10 text-center text-2xl font-bold'></div>
       <div className='mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0'>
-        <div className='rounded-lg md:w-2/3'>
+        <div ref={parent} className='rounded-lg md:w-2/3'>
           {!!cartItems.length ? (
             cartItems.map((data: Product) => (
               <CartItem key={data.id} data={data} />
@@ -26,7 +24,7 @@ const Cart = () => {
           ) : (
             <div className='flex flex-col justify-center items-center'>
               <img src='/nocart.png' alt='no cart items' />
-              <Button className='mt-20 active:scale-95' asChild>
+              <Button className='mt-18 active:scale-95' asChild>
                 <Link to={'/store'}>Go back to shopping</Link>
               </Button>
             </div>

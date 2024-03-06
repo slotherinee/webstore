@@ -1,7 +1,8 @@
 export const renderStars = (data: { rating: { rate: number } }) => {
   let stars = []
+  let roundedRate = Math.round(data.rating.rate)
   for (let i = 0; i < 5; i++) {
-    if (i < data.rating.rate) {
+    if (i < roundedRate) {
       stars.push(
         <svg
           key={i}

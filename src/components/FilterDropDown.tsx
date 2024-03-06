@@ -18,7 +18,10 @@ function FilterDropDown({ filterName, setFilterName }: FilterDropDownProps) {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className='items-center place-self-start ' asChild>
+      <DropdownMenuTrigger
+        className='ml-auto  items-center place-self-start '
+        asChild
+      >
         <Button
           size='sm'
           variant='link'
