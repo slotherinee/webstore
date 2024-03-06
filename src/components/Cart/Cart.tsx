@@ -14,7 +14,7 @@ const Cart = () => {
         {!!cartItems.length ? (
           'Cart Items'
         ) : (
-          <h1 className='font-light text-6xl text-gray-400'>Cart is empty</h1>
+          <h3 className='font-light text-5xl text-gray-400'>Cart is empty</h3>
         )}
       </div>
       <div className='mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0'>

@@ -18,7 +18,7 @@ function FilterDropDown({ filterName, setFilterName }: FilterDropDownProps) {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className='place-self-start ml-20' asChild>
+      <DropdownMenuTrigger className='items-center place-self-start ' asChild>
         <Button
           size='sm'
           variant='link'
@@ -32,6 +32,7 @@ function FilterDropDown({ filterName, setFilterName }: FilterDropDownProps) {
         <DropdownMenuSeparator />
         {filters.map(filter => (
           <DropdownMenuCheckboxItem
+            className='cursor-pointer'
             key={filter}
             onClick={() =>
               setFilterName(filter as 'Newest' | 'Oldest' | 'Price')

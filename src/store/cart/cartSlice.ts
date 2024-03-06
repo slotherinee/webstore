@@ -36,7 +36,6 @@ export const cartSlice = createSlice({
       if (item) {
         item.quantity = (item.quantity || 0) - 1
         if (item.quantity <= 0) {
-          // If quantity is 0 or less, remove item from cart
           state.items = state.items.filter(item => item.id !== action.payload)
         }
       }
@@ -48,6 +47,12 @@ export const { addToCart, removeFromCart, increaseQuantity, decreaseQuantity } =
   cartSlice.actions
 
 export const selectCartItems = (state: RootState) => state.cart.items
+export const totalCartItems = (state: RootState) => {
+  return state.cart.items.reduce(
+    (total, item) => total + (item.quantity || 0),
+    0
+  )
+}
 
 export const selectTotalCost = (state: RootState) =>
   state.cart.items.reduce(

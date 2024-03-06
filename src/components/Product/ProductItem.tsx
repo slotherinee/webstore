@@ -1,6 +1,6 @@
 import type { Product } from '../../types/productTypes'
-import { useAppDispatch } from '@/hooks/useRedux'
-import { addToCart } from '@/store/cart/cartSlice'
+import { useAppDispatch, useAppSelector } from '@/hooks/useRedux'
+import { addToCart, selectCartItems } from '@/store/cart/cartSlice'
 import { v4 as uuidv4 } from 'uuid'
 
 import { Link } from 'react-router-dom'
@@ -10,6 +10,9 @@ type ProductItemProps = {
 }
 
 const ProductItem = ({ data }: ProductItemProps) => {
+  const changedIcon = useAppSelector(selectCartItems).some(
+    item => item.id === data.id
+  )
   const dispatch = useAppDispatch()
   return (
     <div className='w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl'>
@@ -34,10 +37,7 @@ const ProductItem = ({ data }: ProductItemProps) => {
             </p>
             <del>
               <p className='text-sm text-gray-600 cursor-auto ml-2'>
-                $
-                {(data.price + Math.floor(Math.random() * 100 + 100)).toFixed(
-                  2
-                )}
+                ${(data.price + 50).toFixed(2)}
               </p>
             </del>
             <div className='ml-auto'>
@@ -48,7 +48,7 @@ const ProductItem = ({ data }: ProductItemProps) => {
                 }
               >
                 <img
-                  src={null ? '/bbag.png' : '/wbag.png'}
+                  src={changedIcon ? '/bbag.png' : '/wbag.png'}
                   className='w-6 h-6'
                   alt='cart icon'
                 />

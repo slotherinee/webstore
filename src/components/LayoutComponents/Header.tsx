@@ -2,8 +2,11 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Link as ScrollLink } from 'react-scroll'
 import { Button } from '../ui/button'
 import { MoveRight } from 'lucide-react'
+import { useAppSelector } from '@/hooks/useRedux'
+import { totalCartItems } from '@/store/cart/cartSlice'
 
 const Header = () => {
+  const count = useAppSelector(totalCartItems)
   const location = useLocation()
   return (
     <header className='text-gray-600 body-font'>
@@ -50,8 +53,7 @@ const Header = () => {
               size='sm'
               className='hover:text-white hover:bg-slate-900 px-6 active:scale-95'
             >
-              Cart
-              <MoveRight className='ml-3' strokeWidth={1} size={20} />
+              Cart ({count})
             </Button>
           </Link>
         ) : (
