@@ -6,8 +6,10 @@ import { useAppDispatch } from '@/hooks/useRedux'
 import { addToCart } from '@/store/cart/cartSlice'
 import { v4 as uuidv4 } from 'uuid'
 import { renderStars } from '@/utils/renderStars'
+import { useToast } from '../ui/use-toast'
 
 const SingleProduct = () => {
+  const { toast } = useToast()
   const params = useParams()
   const {
     data: product,
@@ -24,7 +26,7 @@ const SingleProduct = () => {
           <div className='lg:w-4/5 mx-auto flex flex-wrap'>
             <img
               alt={product?.title}
-              className='lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded'
+              className='lg:w-1/2 w-full  h-64 object-contain object-center rounded'
               src={product?.image}
             />
             <div className='lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0'>
@@ -49,9 +51,12 @@ const SingleProduct = () => {
                   ${product.price.toFixed(2)}
                 </span>
                 <Button
-                  onClick={() =>
+                  onClick={() => {
                     dispatch(addToCart({ ...product, itemId: uuidv4() }))
-                  }
+                    toast({
+                      description: 'Item was added to cart.',
+                    })
+                  }}
                   className='flex ml-auto py-2 px-6'
                 >
                   Add to cart

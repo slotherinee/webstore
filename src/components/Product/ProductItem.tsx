@@ -4,6 +4,7 @@ import { addToCart, selectCartItems } from '@/store/cart/cartSlice'
 import { v4 as uuidv4 } from 'uuid'
 
 import { Link } from 'react-router-dom'
+import { useToast } from '../ui/use-toast'
 
 type ProductItemProps = {
   data: Product
@@ -14,6 +15,7 @@ const ProductItem = ({ data }: ProductItemProps) => {
     item => item.id === data.id
   )
   const dispatch = useAppDispatch()
+  const { toast } = useToast()
   return (
     <div className='w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl'>
       <div>
@@ -43,9 +45,12 @@ const ProductItem = ({ data }: ProductItemProps) => {
             <div className='ml-auto'>
               <div
                 className='cursor-pointer'
-                onClick={() =>
+                onClick={() => {
                   dispatch(addToCart({ ...data, itemId: uuidv4() }))
-                }
+                  toast({
+                    description: 'Item was added to cart.',
+                  })
+                }}
               >
                 <img
                   src={changedIcon ? '/bbag.png' : '/wbag.png'}
