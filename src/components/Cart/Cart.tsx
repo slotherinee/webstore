@@ -1,17 +1,38 @@
 import { Button } from '@/components/ui/button'
-import { useAppSelector } from '@/hooks/useRedux'
-import { selectCartItems, selectTotalCost } from '@/store/cart/cartSlice'
+import { useAppDispatch, useAppSelector } from '@/hooks/useRedux'
+import {
+  deleteAfterCheckout,
+  selectCartItems,
+  selectTotalCost,
+} from '@/store/cart/cartSlice'
 import CartItem from './CartItem'
 import { Product } from '@/types/productTypes'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAutoAnimate } from '@formkit/auto-animate/react'
+import { useToast } from '../ui/use-toast'
 
 const Cart = () => {
+  const totalPrice = useAppSelector(selectTotalCost)
+  const cartItems = useAppSelector(selectCartItems)
+  const dispatch = useAppDispatch()
+  const navigate = useNavigate()
+  const { toast } = useToast()
+
+  const handleCheckout = () => {
+    dispatch(deleteAfterCheckout())
+    toast({
+      title: `You bought items for ${(totalPrice + 5.0).toFixed(
+        2
+      )}! Checkout was successful`,
+      description:
+        'Your items are on their way! We will deliever them soon or not!',
+    })
+    navigate('/store')
+  }
   const [parent] = useAutoAnimate({
     duration: 500,
   })
-  const totalPrice = useAppSelector(selectTotalCost)
-  const cartItems = useAppSelector(selectCartItems)
+
   return (
     <div className='min-h-screen bg-gray-100 pt-20'>
       <div className='mb-10 text-center text-2xl font-bold'></div>
@@ -50,7 +71,12 @@ const Cart = () => {
                 <p className='text-sm text-gray-700'>including VAT</p>
               </div>
             </div>
-            <Button className='w-full mt-6 active:scale-95'>Check out</Button>
+            <Button
+              onClick={handleCheckout}
+              className='w-full mt-6 active:scale-95'
+            >
+              Check out
+            </Button>
           </div>
         )}
       </div>
